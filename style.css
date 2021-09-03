@@ -1,0 +1,58 @@
+body{
+    padding: 1cm;
+    background-color: #121212;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+h1{
+    text-align: center;
+    color: rebeccapurple;   
+    font-size: 1.1cm;
+    
+}
+
+strong{
+    color: lightskyblue;
+}
+
+hr{
+    background-color: linen;
+    
+    
+}
+
+
+#imgCodeOne {
+    margin-top: 25px;
+    float: left;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    margin-bottom: 25px;
+  }
+
+
+  #imgCodeDos {
+      margin-top: 35px;
+    float: right;
+    margin-top: 25px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+
+  .rightH1{
+      padding: 0.5cm;
+    float: right;
+      text-align: left;
+      background-color: lightgray;
+      
+  }
+
+  .leftH1{
+    padding: 0.5cm;
+    float: left;
+    text-align: right;
+    background-color: lightgray;
+    
+}
+
+  
+
+  
