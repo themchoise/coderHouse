@@ -54,5 +54,20 @@ hr{
 }
 
   
+.buttonColor{
+    color: goldenrod;
+    background-color: white;
+    border-radius: 1cm;
 
+    
+}
+
+.buttonColor:hover{
+    color: blue;
+    background-color: white;
+    border-radius: 1cm;
+
+    
+}
+  
   
