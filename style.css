@@ -1,5 +1,5 @@
 body{
-    background-image: url('thomas-tastet-hSODeSbvzE0-unsplash.jpg');
+    background-image: url('./thomas-tastet-hSODeSbvzE0-unsplash.jpg');
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ ul{
 li{
     color: white;
     
-    list-style-image:url('disponible.png');
+    list-style-image:url('./disponible.png');
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
