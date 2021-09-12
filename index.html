@@ -1,33 +1,155 @@
 <html>
     <head>
     <title>CouderHouse Proyects</title>
+  
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link href="./style.css" rel="stylesheet">
-        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/atelier-dune-dark.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/javascript.min.js"></script>
+                   
     </head>
     <body>
-        <div class="container">
-                <h1> Codigo Clases  <strong>Maximiliano Joyce[CoderHouse] </strong> </h1>
-                <hr>
-                <span style="color: aliceblue; font-size: large;"> Repo GitHub-></span> <a href="https://github.com/themchoise/coderHouse/tree/gh-pages" target="_blank"><img class="ml-2"  src="./GitHub-Mark-Light-64px.png" alt=""></a>
-                <button class="btn buttonColor ml-5" onclick="fnClaseTres()">    <i class="fas fa-code fa-2x"> Clase 3</i> </button>
-                <button class="btn btn-info ml-5" onclick="fnClaseDos()">    <i class="fas fa-code fa-2x"> Clase 2</i> </button>
-                <button class="btn btn-danger ml-5" onclick="fnClase()">    <i class="fas fa-code fa-2x"> Clase 1</i> </button>
+     
+      
+
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <p class="text-light mt-3"></p>
+                <span style="color: aliceblue; font-size: large;"> </span> <a href="https://github.com/themchoise/coderHouse/tree/gh-pages" target="_blank"><img class="ml-2 mr-3"  src="./GitHub-Mark-Light-64px.png" alt=""></a>
                 
-                
-                <br>
-                <hr>
-                <img id="imgCodeDos" src="./code2.jpg" alt="">
-                <h5 class="rightH1">Codigo Clase 3 -> </h5>
-                <img id="imgCodeDos" src="./code1.jpg" alt="">
-                <h5 class="rightH1">Codigo Clase 2 -> </h5>
-                <img id="imgCodeOne" src="./code.jpg" alt="">
-                <h5 class="leftH1"><- Codigo Clase 1 </h5>
-             
-                
+                <h1 class=> Codigo Clases  <strong> M&N [CoderHouse] </strong> </h1>
+
+            </div>
         </div>
+
+        <div class="container">
+            <ul>
+                <li>
+                    <div class="text-light mt-3 pointer"><i href="#preCode4Comp" onclick="fnClaseCuatroComp()"   class="fas fa-code fa-2x"> Clase 4-Comp</i> </div>
+                </li>
+                <li>
+                    <div class="text-light mt-3 pointer"> <i onclick="fnClaseCuatro()" class="fas fa-code fa-2x"> Clase 4</i></div>
+                </li>
+                <li>
+                    <div class="text-light mt-3 pointer"> <i onclick="fnClaseTres()" class="fas fa-code fa-2x"> Clase 3</i></div>
+                </li>
+                <li>
+                    <div class="text-light mt-3 pointer"> <i onclick="fnClaseDos()" class="fas fa-code fa-2x"> Clase 2</i></div>
+                </li>
+                <li>
+                    <div class="text-light mt-3 pointer"> <i onclick="fnClase()" class="fas fa-code fa-2x"> Clase 1</i></div>
+                </li>
+            </ul>
+        </div>
+               
+                    
+                
+             
+                <hr>
+                <h3>Codigo Clase 4-Trabajo Complementario</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col ">
+                          <pre >
+                           <code  id="preCode4Comp" class="javascript">    
+    let presupuestoInicial  =  parseInt(prompt('Calculo de Presupuesto para Empleados\nIngrese el monto del Presupuesto Inicial'));
+    let empleados = parseInt(prompt('Ingrese la cantidad de empleados'));
+    let salario = parseInt(prompt('Ingrese el salario del empleado'));
+    let gastoTotalEmpleados=0;
+    let impuestosEmpelado=0.20;
+    let balance=true;
+
+        const validacionBalance = () => 
+    {
+        if ((presupuestoInicial-(salario*empleados))<0)
+        balance=false;
+        return;
+    }
+
+    validacionBalance()
+
+    const fnGastoEmpleados = (sueldo, empleados) =>  {
+        let resultado=(sueldo*empleados);
+        gastoTotalEmpleados=resultado;
+        return resultado;
+    }
+
+    const fnValidarGasto= (gastoTotalEmpleados, presupuestoInicial) =>  {
+        let diferencia=0
+
+        let resultado=(presupuestoInicial-gastoTotalEmpleados)
+        if (resultado < 0){
+            
+            diferencia=(gastoTotalEmpleados-presupuestoInicial)
+                return ( 'Erronea!, El gasto de empleados excede su presupuesto por 
+                $' + diferencia +'\nNecesita un presupuesto de: $' +(presupuestoInicial+diferencia)  )
+        }else{
+            return ('Exitosa!, Su presupuesto alcanza. \nLuego de pagar el sueldo inicial su presupuesto restante es de $' +resultado )
+        }
+
+    }
+
+    const fnCalculoImpuestos=(sueldo, empleados) => {
+        let totalImpuestoEmpleado=(sueldo*empleados);
+        totalImpuestoEmpleado=(totalImpuestoEmpleado*impuestosEmpelado);
+        return totalImpuestoEmpleado ;
+    }
+
+
+    if (presupuestoInicial>0 && empleados>0 && salario >0)
+    {
+        console.log(balance + 'fin')
+        if  (balance){
+                alert(
+                'Su presupuesto fue de: $' + presupuestoInicial
+                +'\nEl Gasto Total de Empleados es: $'+ fnGastoEmpleados(salario, empleados)
+                +'\nSu validacion de gasto fue: ' + fnValidarGasto(gastoTotalEmpleados, presupuestoInicial)
+                +'\nEl impuesto a pagar por empleado es de $' +  fnCalculoImpuestos(salario,empleados)
+                +'\nEl impuesto total de empleados es: $'+(fnCalculoImpuestos(salario,empleados)*empleados)
+                )
+        }
+        else{           
+        alert(
+            'Su presupuesto fue de: $' + presupuestoInicial
+            +'\nEl Gasto Total de Empleados es: $'+ fnGastoEmpleados(salario, empleados)
+            +'\nSu validacion de gasto fue: ' + fnValidarGasto(gastoTotalEmpleados, presupuestoInicial)
+            )
+            }
+        
+    }
+    else alert('Presupuesto, Empleados o Salario no puede ser 0')             
+                    </code>
+               </pre>
+         </div>
+      <div class="col">
+         <h3>Codigo Clase 4</h3>
+             <pre>
+                 <code  id="preCode4"  class="javascript">                 
+    let montoProducto = parseInt(prompt('Ingrese el monto del Producto'));
+
+    if (montoProducto > 0 )
+    {
+    let cuotas = parseInt(prompt('Ingrese la cantidad de Cuotas'));
+    const caculoCuotas = (monto, cuotas)  => {
+        let valorCuota = parseFloat((monto/cuotas));
+        return valorCuota;
+    }
+
+    alert('El valor de cada cuota es $' + caculoCuotas(montoProducto,cuotas));
+    }
+    else{
+        alert('Monto debe ser > a $0 o un valor numerico');
+    }
+                    </code>
+                </pre>
+             </div>
+        </div>
+    
+       
     </body>
 </html>
 
 <script src="./main.js"></script>
+
