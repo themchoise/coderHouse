@@ -27,7 +27,11 @@
         <div class="container">
             <ul>
                 <li>
-                    <div class="text-light mt-3 pointer"><i href="#preCode4Comp" onclick="fnClaseCuatroComp()"   class="fas fa-code fa-2x"> Clase 4 [Desafío: Funciones relacionadas]</i> </div>
+                    <div class="text-light mt-3 pointer"><i href="#preCode4Comp" onclick="fnClaseCinco()"   class="fas fa-code fa-2x"> Clase 5 [Objetos]</i> </div>
+                </li>
+                <!--
+                <li>
+                    <div class="text-light mt-3 pointer"><i href="#" onclick="fnClaseCuatroComp()"   class="fas fa-code fa-2x"> Clase 4 [Desafío: Funciones relacionadas]</i> </div>
                 </li>
                 <li>
                     <div class="text-light mt-3 pointer"> <i onclick="fnClaseCuatro()" class="fas fa-code fa-2x"> Clase 4 [Desafío: Simulador interactivo]</i></div>
@@ -41,6 +45,7 @@
                 <li>
                     <div class="text-light mt-3 pointer"> <i onclick="fnClase()" class="fas fa-code fa-2x"> Clase 1</i></div>
                 </li>
+                -->
             </ul>
         </div>
                
@@ -48,108 +53,57 @@
                 
              
                 <hr>
-                <h3>Codigo Clase 4-Trabajo Complementario</h3>
+                <h3>Codigo Clase 5-Objetos</h3>
                 <div class="container">
                     <div class="row">
                         <div class="col ">
                           <pre >
                            <code  id="preCode4Comp" class="javascript">    
-    let presupuestoInicial  =  parseInt(prompt('Calculo de Presupuesto para Empleados\nIngrese el monto del Presupuesto Inicial'));
-    let empleados = parseInt(prompt('Ingrese la cantidad de empleados'));
-    let salario = parseInt(prompt('Ingrese el salario del empleado'));
-    let gastoTotalEmpleados=0;
-    let impuestosEmpelado=0.20;
-    let balance=true;
+let totalNotasAlumno = 3
+class Promedio {
+    constructor(alumno, notaUno, notaDos, notaTres) {
+        this.alumno = alumno;
+        this.notaUno = Number(notaUno);
+        this.notaDos = Number(notaDos);
+        this.notaTres = Number(notaTres);
 
-        const validacionBalance = () => 
-    {
-        if ((presupuestoInicial-(salario*empleados))<0)
-        balance=false;
-        return;
+    } get nombreAlumno() {
+        return this.alumno;
     }
 
-    validacionBalance()
-
-    const fnGastoEmpleados = (sueldo, empleados) =>  {
-        let resultado=(sueldo*empleados);
-        gastoTotalEmpleados=resultado;
-        return resultado;
+    get obtenerPromedio() {
+        return ((this.notaUno + this.notaDos + this.notaTres) / totalNotasAlumno);
     }
 
-    const fnValidarGasto= (gastoTotalEmpleados, presupuestoInicial) =>  {
-        let diferencia=0
-
-        let resultado=(presupuestoInicial-gastoTotalEmpleados)
-        if (resultado < 0){
-            
-            diferencia=(gastoTotalEmpleados-presupuestoInicial)
-                return ( 'Erronea!, El gasto de empleados excede su presupuesto por 
-                $' + diferencia +'\nNecesita un presupuesto de: $' +(presupuestoInicial+diferencia)  )
-        }else{
-            return ('Exitosa!, Su presupuesto alcanza. \nLuego de pagar el sueldo inicial su presupuesto restante es de $' +resultado )
+    obtenerCondicion() {
+        let promedio = ((this.notaUno + this.notaDos + this.notaTres) / totalNotasAlumno);
+        if (promedio < 4) {
+            return `El alumno ${this.nombreAlumno} Recursa, su promedio fue: ${this.obtenerPromedio}`
         }
-
-    }
-
-    const fnCalculoImpuestos=(sueldo, empleados) => {
-        let totalImpuestoEmpleado=(sueldo*empleados);
-        totalImpuestoEmpleado=(totalImpuestoEmpleado*impuestosEmpelado);
-        return totalImpuestoEmpleado ;
-    }
-
-
-    if (presupuestoInicial>0 && empleados>0 && salario >0)
-    {
-        console.log(balance + 'fin')
-        if  (balance){
-                alert(
-                'Su presupuesto fue de: $' + presupuestoInicial
-                +'\nEl Gasto Total de Empleados es: $'+ fnGastoEmpleados(salario, empleados)
-                +'\nSu validacion de gasto fue: ' + fnValidarGasto(gastoTotalEmpleados, presupuestoInicial)
-                +'\nEl impuesto a pagar por empleado es de $' +  fnCalculoImpuestos(salario,empleados)
-                +'\nEl impuesto total de empleados es: $'+(fnCalculoImpuestos(salario,empleados)*empleados)
-                )
+        else {
+            return `El alumno ${this.nombreAlumno} Promuebe, su promedio fue ${this.obtenerPromedio}`
         }
-        else{           
-        alert(
-            'Su presupuesto fue de: $' + presupuestoInicial
-            +'\nEl Gasto Total de Empleados es: $'+ fnGastoEmpleados(salario, empleados)
-            +'\nSu validacion de gasto fue: ' + fnValidarGasto(gastoTotalEmpleados, presupuestoInicial)
-            )
-            }
-        
     }
-    else alert('Presupuesto, Empleados o Salario no puede ser 0')             
+}
+
+const alumno1 = new Promedio('Leandro', 8, 2, 5);
+const alumno2 = new Promedio('Raul', 7, 3, 4);
+const alumno3 = new Promedio('Bonilla', 2, 2, 5);
+
+alert('La Condicion de los alumnos es: '
+    + '\n' + alumno1.obtenerCondicion()
+    + '\n' + alumno2.obtenerCondicion()
+    + '\n' + alumno3.obtenerCondicion())
+
                     </code>
                </pre>
          </div>
-      <div class="col">
-         <h3>Codigo Clase 4</h3>
-             <pre>
-                 <code  id="preCode4"  class="javascript">                 
-    let montoProducto = parseInt(prompt('Ingrese el monto del Producto'));
-
-    if (montoProducto > 0 )
-    {
-    let cuotas = parseInt(prompt('Ingrese la cantidad de Cuotas'));
-    const caculoCuotas = (monto, cuotas)  => {
-        let valorCuota = parseFloat((monto/cuotas));
-        return valorCuota;
-    }
-
-    alert('El valor de cada cuota es $' + caculoCuotas(montoProducto,cuotas));
-    }
-    else{
-        alert('Monto debe ser > a $0 o un valor numerico');
-    }
-                    </code>
-                </pre>
-             </div>
-        </div>
+     
     
        
     </body>
 </html>
 
 <script src="./main.js"></script>
+<script src="./main2.js"></script>
 
