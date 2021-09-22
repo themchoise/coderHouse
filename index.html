@@ -27,7 +27,7 @@
         <div class="container">
             <ul>
                 <li>
-                    <div class="text-light mt-3 pointer"><i href="#preCode4Comp" onclick="fnClaseCinco()"   class="fas fa-code fa-2x"> Clase 5 [Objetos]</i> </div>
+                    <div class="text-light mt-3 pointer"><i href="#preCode" onclick="fnClaseSeis()"   class="fas fa-code fa-2x"> Clase 6 [Arrays]</i> </div>
                 </li>
                 <!--
                 <li>
@@ -53,13 +53,15 @@
                 
              
                 <hr>
-                <h3>Codigo Clase 5-Objetos</h3>
+                <h3>Codigo Clase 6-Arrays</h3>
                 <div class="container">
                     <div class="row">
                         <div class="col ">
                           <pre >
-                           <code  id="preCode4Comp" class="javascript">    
-let totalNotasAlumno = 3
+                           <code  id="preCode" class="javascript">    
+let alumnos = [];
+let condicion = [];
+let totalNotasAlumno = 3;
 class Promedio {
     constructor(alumno, notaUno, notaDos, notaTres) {
         this.alumno = alumno;
@@ -88,13 +90,44 @@ class Promedio {
 
 const alumno1 = new Promedio('Leandro', 8, 2, 5);
 const alumno2 = new Promedio('Raul', 7, 3, 4);
-const alumno3 = new Promedio('Bonilla', 2, 2, 5);
-
+const alumno3 = new Promedio('Bonilla', 3, 8, 5);
+const alumno4 = new Promedio('Maximiliano', 4, 3, 5);
+const alumno5 = new Promedio('Estoncio', 5, 1, 5);
+const alumno6 = new Promedio('Presco', 1, 1, 1);
+const alumno7 = new Promedio('Pronto', 1, 3, 2);
+/*
 alert('La Condicion de los alumnos es: '
     + '\n' + alumno1.obtenerCondicion()
     + '\n' + alumno2.obtenerCondicion()
     + '\n' + alumno3.obtenerCondicion())
+*/
 
+/// Comienza la parte de Arrays.
+
+alumnos.push(alumno1, alumno2, alumno3, alumno4, alumno5, alumno6, alumno7);
+
+let nombresAlumnos = alumnos.map(data => data.alumno);
+let nombresCsv = nombresAlumnos.join(', ');
+
+for (const Promedio of alumnos) {
+    let alumnoConPromedio =
+    {
+        Alumno: Promedio.nombreAlumno,
+        Promedio: Promedio.obtenerPromedio
+    }
+    condicion.push(alumnoConPromedio)
+}
+
+let alumnosAprobados = condicion.filter(x => x.Promedio >= 4);
+let nombresAlumnosAprobados = alumnosAprobados.map(x => x.Alumno);
+
+
+console.log(`Los Alumnos son: ${nombresCsv}`);
+console.log(...condicion);
+
+console.log(`La cantidad de aprobados es: ${alumnosAprobados.length} sobre un total de ${alumnos.length}`);
+console.log(`Los alumnos aprobados son ${nombresAlumnosAprobados}`);
+                
                     </code>
                </pre>
          </div>
