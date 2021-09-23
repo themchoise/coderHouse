@@ -77,14 +77,14 @@ const fnClaseSeis = () =>{
 
         ///////Comienza la parte de Ordenar Arrays//////////
         console.log('');
-        console.log('Ej. Complementario. Arrays Ordenados')
+        console.log('Ej. Complementario. Arrays Ordenados');
         console.log('');
 
-        console.log('Lista de Alumnos ordenada alfabeticamente = ' + nombresAlumnosAprobados.sort())
+        console.log('Lista de Alumnos ordenada alfabeticamente = ' + nombresAlumnosAprobados.sort());
         
         let orderNotasDesc = condicion.sort((a,b)=>{
-            
-            return (b.Promedio-a.Promedio)
+
+            return (b.Promedio-a.Promedio);
         })
         
         console.log('Lista ordenada por promedios de mayor a menor');

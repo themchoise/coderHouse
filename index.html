@@ -122,6 +122,8 @@ let alumnosAprobados = condicion.filter(x => x.Promedio >= 4);
 let nombresAlumnosAprobados = alumnosAprobados.map(x => x.Alumno);
 
 
+
+
 console.log(`Los Alumnos son: ${nombresCsv}`);
 console.log(...condicion);
 
@@ -130,14 +132,14 @@ console.log(`Los alumnos aprobados son ${nombresAlumnosAprobados}`);
 
 ///////Comienza la parte de Ordenar Arrays//////////
 console.log('');
-console.log('Ej. Complementario. Arrays Ordenados')
+console.log('Ej. Complementario. Arrays Ordenados');
 console.log('');
 
-console.log('Lista de Alumnos ordenada alfabeticamente = ' + nombresAlumnosAprobados.sort())
+console.log('Lista de Alumnos ordenada alfabeticamente = ' + nombresAlumnosAprobados.sort());
 
 let orderNotasDesc = condicion.sort((a,b)=>{
-    
-    return (b.Promedio-a.Promedio)
+
+    return (b.Promedio-a.Promedio);
 })
 
 console.log('Lista ordenada por promedios de mayor a menor');
@@ -153,5 +155,4 @@ console.log(orderNotasDesc);
 </html>
 
 <script src="./main.js"></script>
-<script src="./main2.js"></script>
 
