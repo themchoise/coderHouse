@@ -53,7 +53,7 @@
                 
              
                 <hr>
-                <h3>Codigo Clase 6-Arrays</h3>
+                <h3>Codigo Clase 6-Arrays & Comp </h3>
                 <div class="container">
                     <div class="row">
                         <div class="col ">
@@ -127,6 +127,21 @@ console.log(...condicion);
 
 console.log(`La cantidad de aprobados es: ${alumnosAprobados.length} sobre un total de ${alumnos.length}`);
 console.log(`Los alumnos aprobados son ${nombresAlumnosAprobados}`);
+
+///////Comienza la parte de Ordenar Arrays//////////
+console.log('');
+console.log('Ej. Complementario. Arrays Ordenados')
+console.log('');
+
+console.log('Lista de Alumnos ordenada alfabeticamente = ' + nombresAlumnosAprobados.sort())
+
+let orderNotasDesc = condicion.sort((a,b)=>{
+    
+    return (b.Promedio-a.Promedio)
+})
+
+console.log('Lista ordenada por promedios de mayor a menor');
+console.log(orderNotasDesc);
                 
                     </code>
                </pre>
